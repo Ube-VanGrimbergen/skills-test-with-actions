@@ -47,52 +47,58 @@ def test_get_nth_fibonacci_zero():
     # Act
     result = get_nth_fibonacci(n)
 
-        # Assert
+    # Assert
     assert result == 0
 
 
-    def test_area_of_circle_negative_radius():
-        """Test area_of_circle with a negative radius should raise ValueError."""
-        with pytest.raises(ValueError, match="Radius cannot be negative"):
-            area_of_circle(-1)
+def test_area_of_circle_negative_radius():
+    """Test area_of_circle with a negative radius should raise ValueError."""
+    with pytest.raises(ValueError, match="Radius cannot be negative"):
+        area_of_circle(-1)
 
 
-    def test_get_nth_fibonacci_negative():
-        """Test get_nth_fibonacci with negative n should raise ValueError."""
-        with pytest.raises(ValueError, match="n cannot be negative"):
-            get_nth_fibonacci(-5)
+def test_get_nth_fibonacci_negative():
+    """Test get_nth_fibonacci with negative n should raise ValueError."""
+    with pytest.raises(ValueError, match="n cannot be negative"):
+        get_nth_fibonacci(-5)
 
 
-    def test_area_of_circle_large_radius():
-        """Test area_of_circle with a large radius."""
-        radius = 100
-        result = area_of_circle(radius)
-        assert abs(result - (math.pi * 100 ** 2)) < 1e-5
+def test_area_of_circle_large_radius():
+    """Test area_of_circle with a large radius."""
+    radius = 100
+    result = area_of_circle(radius)
+    assert abs(result - (math.pi * 100 ** 2)) < 1e-5
 
 
-    def test_get_nth_fibonacci_two():
-        """Test get_nth_fibonacci with n=2."""
-        assert get_nth_fibonacci(2) == 1
+def test_get_nth_fibonacci_two():
+    """Test get_nth_fibonacci with n=2."""
+    assert get_nth_fibonacci(2) == 1
 
 
-    def test_get_nth_fibonacci_five():
-        """Test get_nth_fibonacci with n=5."""
-        assert get_nth_fibonacci(5) == 5
+def test_get_nth_fibonacci_five():
+    """Test get_nth_fibonacci with n=5."""
+    assert get_nth_fibonacci(5) == 5
 
 
-    def test_get_nth_fibonacci_large():
-        """Test get_nth_fibonacci with a larger n."""
-        assert get_nth_fibonacci(20) == 6765
+def test_get_nth_fibonacci_large():
+    """Test get_nth_fibonacci with a larger n."""
+    assert get_nth_fibonacci(20) == 6765
 
 
-    def test_area_of_circle_float_radius():
-        """Test area_of_circle with a float radius."""
-        radius = 2.5
-        result = area_of_circle(radius)
-        assert abs(result - (math.pi * 2.5 ** 2)) < 1e-5
+def test_area_of_circle_float_radius():
+    """Test area_of_circle with a float radius."""
+    radius = 2.5
+    result = area_of_circle(radius)
+    assert abs(result - (math.pi * 2.5 ** 2)) < 1e-5
 
 
-    def test_area_of_circle_type_error():
-        """Test area_of_circle with a non-numeric input."""
-        with pytest.raises(TypeError):
-            area_of_circle("abc")
+def test_area_of_circle_type_error():
+    """Test area_of_circle with a non-numeric input."""
+    with pytest.raises(TypeError):
+        area_of_circle("abc")
+
+
+def test_get_nth_fibonacci_type_error():
+    """Test get_nth_fibonacci with a non-integer input."""
+    with pytest.raises(TypeError):
+        get_nth_fibonacci("abc")
